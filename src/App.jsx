@@ -5,13 +5,17 @@ import Home from './Components/Home'
 import CustomNavBar from './Components/Navbar'
 import CardPizza from './Components/CardPizza';
 import FooterApp from './Components/Footer';
+import Register from './Components/Register';
+import Login from './Components/Login';
 
 function App() {
   
   return (
     <>
-      {/* <h1>Construyendo web de pizzeria</h1> */}
+      
       <CustomNavBar/>
+      {/* <Register />
+      <Login/> */}
       <Home/>
       <div className="main-container">
       <CardPizza
@@ -42,6 +46,7 @@ ac54-90f6c31eb3e3'
       />
       </div>
       <FooterApp/>
+      
     </>
   )
 }
