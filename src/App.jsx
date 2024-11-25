@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home'
@@ -8,14 +8,28 @@ import FooterApp from './Components/Footer';
 import Register from './Components/Register';
 import Login from './Components/Login';
 
+
 function App() {
-  
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const handleShowRegister = () => setShowRegisterModal(true);
+  const handleCloseRegister = () => setShowRegisterModal(false);
+
+
+  const handleShowLogin = () => setShowLoginModal(true);
+  const handleCloseLogin = () => setShowLoginModal(false);
+
   return (
     <>
       
-      <CustomNavBar/>
-      {/* <Register />
-      <Login/> */}
+      <CustomNavBar 
+      onRegisterClick={handleShowRegister} 
+      onLoginClick={handleShowLogin}
+      />
+      <Register show={showRegisterModal} onClose={handleCloseRegister} />
+      <Login show={showLoginModal} onClose={handleCloseLogin}/>
+
       <Home/>
       <div className="main-container">
       <CardPizza
